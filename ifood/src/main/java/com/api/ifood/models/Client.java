@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -15,18 +14,20 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "TB_ESTABELECIMENTO", uniqueConstraints = {@UniqueConstraint(columnNames = "Est_nome")})
-public class Establishment implements Serializable {
+@Table(name = "TB_CLIENTE", uniqueConstraints = {@UniqueConstraint(columnNames = "Cli_nome")})
+public class Client implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue( strategy =  GenerationType.AUTO)
-    @Column(name = "establishment_id")
+    @Column (name = "client_id")
     private UUID id;
 
-    @Column (name = "Est_end", nullable = false)
+    @Column (name = "Cli_end", nullable = false)
     private String endereco;
 
-    @Column (name = "Est_nome", nullable = false)
+    @Column (name = "Cli_nome", nullable = false)
     private String nome;
+
 }
